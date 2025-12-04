@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>行ってきたっちゃん！ブログ | 福岡で笑おう！</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Note埋め込みを中央寄せにするためのスタイル */
+    .note-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 2em 0;
+    }
+    
+    /* 今後記事が増えた場合に縦に並べるためのコンテナ */
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+  </style>
+</head>
+<body class="has-fixed-menu">
+
+    <div class="fixed-menu" role="banner">
+        <div class="menu-inner">
+          <picture>
+            <source srcset="images/menu_long.png" media="(min-width: 840px)">
+            <img src="images/menu.png" alt="メニュー">
+          </picture>
+          
+          <nav class="menu-links">
+            <a href="index.html" aria-label="ホーム"></a>
+            <a href="howto.html" aria-label="楽しみ方"></a>
+            <a href="interview.html" aria-label="芸人の声"></a>
+            <a href="blog.html" aria-label="ブログ"></a>
+          </nav>
+        </div>
+      </div>
+
+  <main class="section">
+    <div class="container prose">
+      
+      <img class="title-img" src="images/blog.png" alt="行ってきたっちゃん！ ブログ">
+
+      <p class="lead-sub">
+        「このライブ、どげんやった？」<br>
+        実際に行ってきたライブの感想や、劇場の熱気をレポートします。<br>
+        アツアツの笑いの空気を、ちょっとだけお裾分け。<br>
+        詳しくはnoteをチェック！
+      </p>
+
+      <div class="blog-list">
+        
+        <div class="note-wrapper">
+          <iframe class="note-embed" src="https://note.com/embed/notes/n9ba9e6e34945" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe>
+          <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+        </div>
+
+        </div>
+
+    
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="margin:0">©︎2025 福岡で笑おう！</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>芸人インタビュー一覧 | 福岡で笑おう！</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Coming Soon 用の追加スタイル */
+    .interview-item.disabled {
+      cursor: default;     /* クリックできないカーソルにする */
+      opacity: 0.8;        /* 全体を少し薄くする */
+    }
+    .interview-item.disabled:hover {
+      transform: none;     /* ホバー時の浮き上がりアニメーションを無効化 */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 影も変化させない */
+    }
+
+    /* 画像に重ねるためのラッパー */
+    .thumb-wrap {
+      position: relative;
+      display: block;
+    }
+
+    /* COMING SOON バッジ */
+    .coming-soon-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(226, 67, 31, 0.9); /* テーマカラーの赤 */
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body class="has-fixed-menu">
+
+  <div class="fixed-menu" role="banner">
+    <div class="menu-inner">
+      <picture>
+        <source srcset="images/menu_long.png" media="(min-width: 840px)">
+        <img src="images/menu.png" alt="メニュー">
+      </picture>
+      
+      <nav class="menu-links">
+        <a href="index.html" aria-label="ホーム"></a>
+        <a href="howto.html" aria-label="楽しみ方"></a>
+        <a href="interview.html" aria-label="芸人の声"></a>
+        <a href="blog.html" aria-label="ブログ"></a>
+      </nav>
+    </div>
+  </div>
+  
+
+  <main class="section">
+    <div class="container">
+      <img class="title-img" src="images/voice.png" alt="芸人の声 インタビュー一覧">
+
+      <p class="lead-sub">福岡で活躍する芸人たちの声を集めました。気になる芸人をクリックしてインタビューをチェック！</p>
+
+      <div class="interview-list">
+        <a href="interview/patchworkpanda.html" class="interview-item">
+          <img src="images/pachiwa1.jpg" alt="パッチワークパンダ" class="interview-thumb">
+          <img src="images/pachiwa.png" alt="パッチワークパンダ" class="interview-name-img">
+        </a>
+
+        <a href="interview/michieda.html" class="interview-item">
+          <img src="images/michieda.jpg" alt="ミチエダ" class="interview-thumb">
+          <img src="images/michieda.png" alt="ミチエダ" class="interview-name-img">
+        </a>
+
+        <a href="interview/keisou.html" class="interview-item">
+          <img src="images/keisou.jpg" alt="ケイソウ" class="interview-thumb">
+          <img src="images/keisou.png" alt="ケイソウ" class="interview-name-img">
+        </a>
+
+        <a href="interview/tashimasho.html" class="interview-item">
+          <img src="images/tashima.jpg" alt="田島将" class="interview-thumb">
+          <img src="images/tashima.png" alt="田島将" class="interview-name-img">
+        </a>
+       
+        <div class="interview-item disabled">
+          <div class="thumb-wrap">
+            <img src="images/jiraigen.jpg" alt="地雷原突破" class="interview-thumb">
+            <span class="coming-soon-badge">COMING SOON</span>
+          </div>
+          <img src="images/jiraigen.png" alt="地雷原突破" class="interview-name-img">
+        </div>
+
+        <div class="interview-item disabled">
+          <div class="thumb-wrap">
+            <img src="images/rhyme.jpg" alt="ライム11合" class="interview-thumb">
+            <span class="coming-soon-badge">COMING SOON</span>
+          </div>
+          <img src="images/rhyme.png" alt="ライム11合" class="interview-name-img">
+        </div>
+       
+      </div>
+      
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="margin:0">©︎2025 福岡で笑おう！</p>
+    </div>
+  </footer>
+
+</body>
+</html>

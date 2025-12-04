@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>福岡で笑おう！</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* スライダー上の COMING SOON バッジ用スタイル */
+    .thumb-wrap {
+      position: relative;
+      display: block;
+    }
+    .coming-soon-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(226, 67, 31, 0.9); /* テーマカラーの赤 */
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      pointer-events: none; /* バッジが邪魔で画像が見えなくならないように */
+      z-index: 10;
+    }
+    
+    /* クリック不可のスライド用 */
+    .slide.disabled {
+      cursor: default;
+    }
+    .slide.disabled img {
+      opacity: 0.8; /* 少し薄くする */
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero__noren">
+      <img src="images/noren.png" alt="福岡で笑おう！ のれんロゴ">
+  
+      <img src="images/logo_text.png"
+           alt="福岡で笑おう！ テキストロゴ"
+           class="hero__logo">
+    </div>
+  
+    <img class="hero__hand" src="images/hand.png" alt="手">
+  </header>
+  
+  <section class="section">
+    <div class="container lead prose">
+      <p>福岡の夜には、あたたかい灯りと笑い声がよく似合う。
+        </p>
+        <p>屋台ののれんをめくるように、<br>
+          ふらっと笑いに会いに行こう。</p>
+          
+          <p>福岡のお笑いは、湯気のようにあたたかくて、あなたの心をほぐしてくれる。</p>
+          
+          <p><strong>「福岡で笑おう！」</strong>は、<br>
+          この街のお笑いライブをもっと身近に感じてもらうための場所。<br>
+          笑いに出会い、味わい、また会いに行けるように。</p>
+          
+          <p>さあ、笑っていきんしゃい。</p>
+          
+    </div>
+  </section>
+
+  <section id="guide" class="section">
+    <div class="container prose">
+      <img class="title-img" src="images/howto.png" alt="どうやって楽しむと？ 楽しみ方" />
+      
+      <div class="guide-layout">
+        <div class="guide-text">
+          <p>お笑いライブって、<br>
+            初めてだとちょっと緊張しますよね。</p>
+            
+          <p>でも、屋台にふらっと立ち寄るような気持ちで大丈夫。<br>
+          笑いの味わい方やマナーを、そっとご案内します。</p>
+          
+          <p>笑いの一杯に、乾杯。</p>
+
+          <div class="guide-image">
+            <img src="images/beer.png" alt="ビールイラスト" />
+          </div>
+          
+          <a href="howto.html" class="pill-link"><img src="images/more.png" alt="もっと見る" /></a>
+        </div>
+
+       
+      </div>
+
+    </div>
+  </section>
+
+  <section id="voices" class="section">
+    <div class="container prose">
+      <img class="title-img" src="images/voice.png" alt="話ば聞いてみらんね！ 芸人の声" />
+
+      <p>夜の屋台で、あなたの隣に座ったのは、福岡で社会人として働きながら舞台に立つ社会人芸人。湯気の向こうで語られるのは、お笑いのこと、仕事のこと、そして少しの恋の話。屋台の灯りの下で交わされる言葉の中に、笑いの裏にある“リアル”が見えてきます。</p>
+      
+      <div class="voice__slider">
+        <div class="slide-track">
+
+          <a class="slide" href="interview/patchworkpanda.html" aria-label="パッチワークパンダ">
+            <img src="images/pachiwa1.jpg" alt="パッチワークパンダ" loading="lazy">
+          </a>
+          <a class="slide" href="interview/michieda.html" aria-label="ミチエダ">
+            <img src="images/michieda.jpg" alt="ミチエダ" loading="lazy">
+          </a>
+          
+          <div class="slide disabled" aria-label="地雷原突破">
+            <div class="thumb-wrap">
+              <img src="images/jiraigen.jpg" alt="地雷原突破" loading="lazy">
+              <span class="coming-soon-badge">COMING SOON</span>
+            </div>
+          </div>
+          
+          <a class="slide" href="interview/keisou.html" aria-label="ケイソウ">
+            <img src="images/keisou.jpg" alt="ケイソウ" loading="lazy">
+          </a>
+          
+          <div class="slide disabled" aria-label="ライム11合">
+            <div class="thumb-wrap">
+              <img src="images/rhyme.jpg" alt="ライム11合" loading="lazy">
+              <span class="coming-soon-badge">COMING SOON</span>
+            </div>
+          </div>
+          
+          <a class="slide" href="interview/tashimasho.html" aria-label="田島将">
+            <img src="images/tashima.jpg" alt="田島将" loading="lazy">
+          </a>
+
+          <a class="slide" href="interview/patchworkpanda.html" aria-label="パッチワークパンダ">
+            <img src="images/pachiwa1.jpg" alt="パッチワークパンダ" loading="lazy">
+          </a>
+          <a class="slide" href="interview/michieda.html" aria-label="ミチエダ">
+            <img src="images/michieda.jpg" alt="ミチエダ" loading="lazy">
+          </a>
+          
+          <div class="slide disabled" aria-label="地雷原突破">
+            <div class="thumb-wrap">
+              <img src="images/jiraigen.jpg" alt="地雷原突破" loading="lazy">
+              <span class="coming-soon-badge">COMING SOON</span>
+            </div>
+          </div>
+          
+          <a class="slide" href="interview/keisou.html" aria-label="ケイソウ">
+            <img src="images/keisou.jpg" alt="ケイソウ" loading="lazy">
+          </a>
+          
+          <div class="slide disabled" aria-label="ライム11合">
+            <div class="thumb-wrap">
+              <img src="images/rhyme.jpg" alt="ライム11合" loading="lazy">
+              <span class="coming-soon-badge">COMING SOON</span>
+            </div>
+          </div>
+          
+          <a class="slide" href="interview/tashimasho.html" aria-label="田島将">
+            <img src="images/tashima.jpg" alt="田島将" loading="lazy">
+          </a>
+
+        </div>
+      </div>
+
+      <a href="interview.html" class="pill-link">
+        <img src="images/more.png" alt="もっと見る">
+      </a>
+      
+    </div>
+    
+  </section>
+
+  <section id="cal" class="section">
+    <div class="container">
+      <img class="title-img" src="images/calendar.png" alt="今夜一軒いかんね！ カレンダー" />
+      <p>おでんの具を選ぶみたいに、<br>
+        「今日はどのライブにしようかな〜」なんて気分でOK。</p>
+        
+        <p>福岡で開催されるお笑いライブのスケジュールをまとめました。<br>
+          気になったライブがあったら、あたたかい笑いの湯気に誘われてみてください。</p>
+        
+      <div class="card" aria-label="カレンダー埋め込み領域">
+        <iframe title="Calendar" src="https://timetreeapp.com/public_calendars/fukuokadewaraou/embed/monthly?calendar_name=true&frame_color=%23e73b3b" style="width:100%;min-height:700px;aspect-ratio:680/720;border:none"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="section">
+    <div class="container prose">
+      <img class="title-img" src="images/blog.png" alt="行ってきたっちゃん！ ブログ" />
+      <p class="lead-sub">実際に行った感想をレポート！アツアツの熱気とワクワク感を伝えます。</p>
+      
+      <a href="blog.html" class="pill-link">
+        <img src="images/more.png" alt="もっと見る">
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="margin:0">©︎2025 福岡で笑おう！</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const hand = document.querySelector('.hero__hand');
+      if(!hand) return;
+  
+      const onScroll = () => {
+        // 10px以上スクロールしたら回転、トップで元に戻す
+        if (window.scrollY > 6) {
+          hand.classList.add('is-rotated');
+        } else {
+          hand.classList.remove('is-rotated');
+        }
+      };
+  
+      window.addEventListener('load', onScroll, { passive: true });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+    })();
+  </script>
+  
+
+</body>
+</html>

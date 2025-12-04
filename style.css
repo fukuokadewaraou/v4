@@ -1,0 +1,530 @@
+/* =========================================
+   福岡で笑おう！ 共通スタイル
+   ========================================= */
+
+/* ===== Theme & Base ===== */
+:root{
+  --red-1:#e2431f;
+  --red-2:#a51f14;
+  --beige:#f5efe6;
+  --ink:#2e2a27;
+  --shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+html { font-size: 100%; } /* 1rem = 16px */
+html, body { overflow-x: hidden; }     /* フルブリードのはみ出し対策 */
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+    "Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic","Meiryo",sans-serif;
+  color: var(--ink);
+  background: var(--beige);
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-size: clamp(1.875rem, 4.5vw, 2.25rem);
+  line-height: 1.3;
+  margin: 0.2em 0 0.6em;
+  font-weight: 800;
+}
+h2 {
+  font-size: clamp(1.5rem, 3.6vw, 2rem);
+  line-height: 1.35;
+  margin: 0.2em 0 0.8em;
+  font-weight: 800;
+}
+h3 {
+  font-size: clamp(1.125rem, 2.8vw, 1.25rem);
+  line-height: 1.4;
+  margin: 0.2em 0 0.6em;
+  font-weight: 700;
+}
+p { margin: 0.8em 0; }
+.small, .caption { font-size: 0.875rem; line-height: 1.7; }
+.caption--xs { font-size: 0.75rem; line-height: 1.6; }
+.button, .label { font-size: clamp(1rem, 2.6vw, 1.125rem); }
+
+
+.lead p {
+  line-height: 1.9;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+}
+
+
+/* ===== 本文の横幅を画面サイズに応じて可変 ===== */
+.section p,
+.lead p,
+.lead-sub,
+.voice__note {
+  width: 80%;               /* ← 画面幅の80%（左右10%ずつ余白） */
+  max-width: 720px;         /* ← 画面が広いときは最大720pxまで */
+  margin-left: auto;        /* ← 中央寄せ */
+  margin-right: auto;
+  line-height: 1.9;         /* ← 読みやすい行間 */
+}
+
+
+
+@media (min-width: 840px){
+  h1 { font-size: clamp(2rem, 2.8vw, 2.5rem); }
+  h2 { font-size: clamp(1.6rem, 2.2vw, 2.125rem); }
+}
+
+/* ===== Layout ===== */
+img{max-width:100%; height:auto; display:block}
+a{color:inherit; text-decoration:none}
+/* width　数値を下げると余白が広くなる　margin-inline: auto; 左右中央寄せにする*/
+.container{width:min(88vw,760px); margin-inline:auto}
+.section{padding:clamp(36px,6vw,72px) 0}
+
+
+/* ===== Hero（トップののれんをフルブリード） ===== */
+/* ヒーロー全体 */
+.hero {
+  position: relative;
+  height: min(60vh, 520px);      /* 必要ならここは後で微調整 */
+  overflow: hidden;
+}
+
+/* のれん（親） */
+.hero__noren {
+  position: relative;
+  width: 100%;
+}
+.hero__noren > img:first-child {
+  width: 100%;
+  display: block;
+}
+
+/* ロゴ（子）：中央に重ねる＋左右の余白は width で調整 */
+.hero__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(55vw, 340px);   /* ←ここを小さくすると左右の余白が広がる */
+  height: auto;
+  z-index: 2;
+}
+
+
+
+/* 手の位置（右下に重ねる） */
+.hero__hand {
+  position: absolute;
+  right: 8%;
+  bottom: 6%;
+  width: clamp(70px, 18vw, 110px);
+}
+
+
+/* スクロール時の回転クラス（今の JS 用） */
+.hero__hand.is-rotated {
+  transform: rotate(-15deg) translateY(8px);
+}
+
+/* スマホ向け調整 */
+@media (max-width: 768px) {
+  /* ヒーローエリアの高さを「固定」から「自動（画像なり）」に変更して余白をなくす */
+  .hero {
+    height: auto; 
+    min-height: auto; /* 念のためmin-heightもリセット */
+    overflow: visible; /* 手が少しはみ出しても切れないようにする（お好みでhiddenのままでも可） */
+  }
+
+  /* ロゴのサイズ調整（既存） */
+  .hero__logo img {
+    width: min(80vw, 360px);
+  }
+
+  /* 手の位置を調整：枠の高さが変わったので位置も合わせる */
+  .hero__hand {
+    /* 以前の clamp 設定だと位置が高すぎる可能性があるため、画像の下端に合わせて調整 */
+    bottom: -10%; /* 画像の下端より少し下にはみ出させる場合 */
+    /* もしはみ出させたくない場合は bottom: 0; にしてください */
+    
+    right: 4%;    /* 右端の余白 */
+    width: 80px;  /* スマホでの手のサイズ */
+  }
+}
+
+
+/* 手の位置・サイズ・回転アニメ設定 */
+.hero__hand {
+  position: absolute;
+  z-index: 3;
+  right: clamp(12px, 4vw, 36px);
+  
+  /* 修正箇所：下の位置を調整 */
+  bottom: -40px;  /* 数値を小さくするほど下へ移動します。PCでの位置を基準に設定 */
+  /* bottom: clamp(150px, 10vw, 80px); ←元の設定は削除 */
+  
+  width: clamp(80px, 18vw, 120px);
+  height: auto;
+  pointer-events: none;
+
+  transform: rotate(0deg);
+  transform-origin: 70% 30%;
+  transition: transform .45s ease;
+}
+
+/* スクロール時に90度回転 */
+.hero__hand.is-rotated{
+  transform: rotate(90deg);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero__hand{ transition:none; }
+}
+
+/* ===== 固定メニュー（サブページ用運用。indexは使わない） ===== */
+.fixed-menu{ position:fixed; top:0; left:0; right:0; z-index:50; text-align:center; }
+.fixed-menu img{ width:100vw; margin:0; display:block; filter:drop-shadow(0 10px 18px rgba(0,0,0,.18)); }
+/* サブページの <body> に has-fixed-menu を付けたときだけ余白を与える */
+body.has-fixed-menu { padding-top: 150px; }
+@media (min-width:840px){ body.has-fixed-menu { padding-top: 180px; } }
+
+/* ===== 見出し画像（左右に余白） ===== */
+.title-img {
+  display: block;
+  margin: 0 auto 1rem;        /* 完全中央寄せ＆下に少し余白 */
+  width: 50%;                 /* 画面幅の% */
+  max-width: 200px;           /* 最大幅 */
+  padding: 0;                 /* 左右の余白を消して真ん中寄せ */
+}
+
+
+/* PCで少し大きくする */
+@media (min-width: 840px) {
+  .section-arrow {
+    border-left-width: 22px;
+    border-right-width: 22px;
+    border-top-width: 30px;
+    margin-top: 32px;
+  }
+}
+
+
+/* ===== 楽しみ方（ビール） ===== */
+.beer-wrap{display:grid; gap:14px; margin:18px 0}
+.beer-card{ background:#fff; border-radius:18px; padding:14px; box-shadow:var(--shadow); }
+.beer-img{border-radius:14px; overflow:hidden}
+.bullets{list-style:'・ '; margin:12px 0 0; padding-left:.6rem}
+.bullets li{margin:.45rem 0; font-weight:600}
+
+/* ===== もっと見る（枝豆ボタン） ===== */
+.pill-link img {
+  width: 180px;   /* ← ここでサイズ変更 */
+  height: auto;   /* ← 縦横比を自動維持 */
+  margin: 20px auto 0; /* ← 上下の余白（中央寄せ） */
+  display: block; /* ← 中央寄せに必要 */
+}
+
+
+/* ===== 芸人の声 ===== */
+.voice{display:grid; gap:16px; align-items:center}
+.voice__img{border-radius:14px; overflow:hidden; box-shadow:var(--shadow)}
+.voice__note{font-size:.95rem}
+
+/* ===== 芸人の声スライダー ===== */
+.voice__slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 24px 0 40px;
+}
+
+.voice__slider .slide-track {
+  display: flex;
+  gap: 20px;
+  width: calc(250px * 12); /* スライドを繰り返す想定で広めに */
+  animation: scrollSlider 40s linear infinite;
+}
+
+.voice__slider img {
+  width: 250px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform .3s ease;
+}
+
+.voice__slider img:hover {
+  transform: scale(1.05);
+}
+
+/* 横に自動で流れるアニメーション */
+@keyframes scrollSlider {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* スマホ調整 */
+@media (max-width: 600px) {
+  .voice__slider img {
+    width: 180px;
+  }
+  .voice__slider .slide-track {
+    gap: 14px;
+    animation-duration: 35s;
+  }
+}
+
+/* ===== インタビュー一覧 ===== */
+.interview-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.interview-item {
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.interview-item img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom: 8px;
+}
+
+.interview-item p {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.interview-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* ===== 白カード ===== */
+.card{ background:#fff; border-radius:18px; padding:18px; box-shadow:var(--shadow); min-height:220px; }
+
+/* ===== Footer ===== */
+footer{
+  color:#fff; background:linear-gradient(180deg,var(--red-2),#7f1f15);
+  padding:40px 0; margin-top:40px; text-align:center;
+}
+
+/* PC調整 */
+@media (min-width:840px){
+  .beer-wrap{grid-template-columns:1fr 1fr}
+  .voice{grid-template-columns:1fr 1fr}
+  .card{min-height:360px}
+}
+
+/* スマホ時：本文の文字を少しだけ小さく */
+@media (max-width: 600px){
+  /* 読み物っぽい本文だけを対象にする */
+  .prose p,
+  .prose .lead-sub,
+  .section.prose p,
+  .section .prose p {
+    font-size: 0.95rem;   /* お好みで 0.92rem〜0.98rem に調整可 */
+    line-height: 1.95;    /* 行間は気持ち広めに */
+  }
+}
+
+/* ===== howtoページ用の大きい左寄せ見出し画像 ===== */
+.howto-title {
+  display: block;
+  margin: 0 0 1.2rem 0;   /* 左寄せ＋下に余白 */
+  width: 90%;             /* かなり大きめに広げる */
+  max-width: 600px;       /* PCでの最大サイズ（調整可） */
+  height: auto;
+}
+
+/* スマホ時（600px以下）は少し小さめに調整 */
+@media (max-width: 600px) {
+  .howto-title {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* コンビ名画像は影・角丸を消す */
+.interview-name-img {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* インタビュー個別ページのタイトル画像 */
+.voice-title {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.voice-title-img {
+  max-width: 360px;   /* PC時の最大サイズ */
+  width: 80%;         /* スマホでは自動で縮まる */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* =========================================
+   固定メニュー（リンクエリア設定）
+   ========================================= */
+
+/* 画像とリンクをまとめるラッパー */
+.menu-inner {
+  position: relative;
+  width: 100%;
+}
+
+/* 画像設定（既存のスタイルを微調整） */
+.menu-inner img {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.18));
+}
+
+/* リンクのコンテナ（画像の上に被せる） */
+.menu-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%; /* のれんの布部分の高さをカバー（下部の凹凸を避けるため少し短めに設定） */
+  display: flex; /* 子要素を横並びにする */
+  z-index: 10;
+}
+
+/* 個別の透明リンク設定 */
+.menu-links a {
+  flex: 1; /* 幅を均等に4等分する */
+  height: 100%;
+  display: block;
+  cursor: pointer;
+  /* background: rgba(255,0,0,0.3); */ /* ←配置を確認したい時はこのコメントを外すと赤く表示されます */
+}
+
+/* タッチデバイスでのタップ時の反応を見やすくする（オプション） */
+.menu-links a:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   YouTube公開予定エリア
+   ========================================= */
+
+   .movie-preview {
+    margin: 48px 0;
+    padding: 24px;
+    background-color: #fff;
+    border: 2px dashed #ddd; /* 破線で「準備中」感を出す */
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .movie-preview h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #e73b3b;
+    font-size: 1.2rem;
+  }
+  
+  /* =========================================
+   YouTube公開予定エリア（iframe版）
+   ========================================= */
+
+.movie-preview {
+  margin: 48px 0;
+  padding: 24px;
+  background-color: #fff;
+  border: 2px dashed #ddd;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.movie-preview h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #e73b3b;
+  font-size: 1.2rem;
+}
+
+/* 動画プレーヤーのラッパー（16:9を維持） */
+.movie-box {
+  position: relative;
+  width: 100%;
+  max-width: 640px; /* PCでの最大幅 */
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  background-color: #000; /* 読み込み中の背景色 */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 実際に埋め込むiframeの設定 */
+.movie-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 上に重ねるメッセージ（半透明） */
+.movie-msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* 背景を暗くしてエラー画面をうっすら見せる */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  pointer-events: none; /* 下のプレーヤーをクリックさせたい場合は auto、触らせないなら none */
+  z-index: 2; /* iframeより上に表示 */
+}
+
+/* COMING SOON バッジの微調整 */
+.movie-msg .coming-soon-badge {
+  position: static; /* movie-msg内でフレックス配置するため */
+  transform: none;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  background-color: #e73b3b;
+}
+
+.movie-msg p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* チャンネルリンクボタン */
+.movie-link-btn {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.9em;
+  color: #e73b3b;
+  border-bottom: 1px solid #e73b3b;
+  padding-bottom: 2px;
+  transition: opacity 0.3s;
+}
+.movie-link-btn:hover {
+  opacity: 0.7;
+}
