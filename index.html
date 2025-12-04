@@ -39,6 +39,22 @@
 </head>
 <body>
 
+  <div class="fixed-menu" id="fixedMenu" role="banner">
+    <div class="menu-inner">
+      <picture>
+        <source srcset="images/menu_long.png" media="(min-width: 840px)">
+        <img src="images/menu.png" alt="メニュー">
+      </picture>
+      <nav class="menu-links">
+        <a href="index.html" aria-label="ホーム"></a>
+        <a href="howto.html" aria-label="楽しみ方"></a>
+        <a href="interview.html" aria-label="芸人の声"></a>
+        <a href="blog.html" aria-label="ブログ"></a>
+      </nav>
+    </div>
+  </div>
+
+
   <header class="hero">
     <div class="hero__noren">
       <img src="images/noren.png" alt="福岡で笑おう！ のれんロゴ">
@@ -210,14 +226,32 @@
   <script>
     (function(){
       const hand = document.querySelector('.hero__hand');
-      if(!hand) return;
+      const menu = document.getElementById('fixedMenu');
+      const hero = document.querySelector('.hero');
   
       const onScroll = () => {
-        // 10px以上スクロールしたら回転、トップで元に戻す
-        if (window.scrollY > 6) {
-          hand.classList.add('is-rotated');
-        } else {
-          hand.classList.remove('is-rotated');
+        const scrollY = window.scrollY;
+        
+        // --- 1. 手の回転アニメーション ---
+        if(hand) {
+          if (scrollY > 6) {
+            hand.classList.add('is-rotated');
+          } else {
+            hand.classList.remove('is-rotated');
+          }
+        }
+
+        // --- 2. メニューの出し入れ制御 ---
+        if(menu && hero) {
+          // ヒーローエリアの高さを取得
+          const heroHeight = hero.offsetHeight;
+
+          // スクロール量がヒーローの高さを超えたらメニューを表示
+          if (scrollY > heroHeight) {
+            menu.classList.add('is-visible');
+          } else {
+            menu.classList.remove('is-visible');
+          }
         }
       };
   
