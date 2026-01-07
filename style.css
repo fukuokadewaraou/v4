@@ -57,18 +57,17 @@ p { margin: 0.8em 0; }
   letter-spacing: 0.03em;
 }
 
-
 /* ===== 本文の横幅を画面サイズに応じて可変 ===== */
-.section p,
 .lead p,
 .lead-sub,
 .voice__note {
-  width: 80%;               /* ← 画面幅の80%（左右10%ずつ余白） */
-  max-width: 720px;         /* ← 画面が広いときは最大720pxまで */
-  margin-left: auto;        /* ← 中央寄せ */
+  width: 80%;
+  max-width: 720px;
+  margin-left: auto;
   margin-right: auto;
-  line-height: 1.9;         /* ← 読みやすい行間 */
+  line-height: 1.9;
 }
+
 
 
 
@@ -609,4 +608,130 @@ footer{
     width: 80%;
     max-width: 180px;
   }
+}
+
+/* ===== 読みやすさを向上させる余白とレイアウトの調整 ===== */
+
+/* 1. 全体コンテナの微調整 */
+.container {
+  width: 90%; /* スマホ時は画面の90%を使い、窮屈さを解消 */
+  max-width: 800px; /* 読み物として視線が疲れにくい最大幅に設定 */
+  margin-inline: auto;
+}
+
+/* 2. 本文（proseクラス）のテキスト制御 */
+.prose p, 
+.prose .bullets, 
+.prose dl {
+  width: 100%; /* .container 内いっぱいに広げる */
+  max-width: 100%; 
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8; /* 読みやすい行間を確保 */
+  text-align: justify; /* 日本語の端を揃えて綺麗に見せる */
+  word-break: break-all;
+}
+
+/* 3. スマホ表示（600px以下）の最適化 */
+@media (max-width: 600px) {
+  .section {
+    padding: 32px 0; /* 上下の余白を少し詰め、リズムを作る */
+  }
+  
+  .howto-title {
+    width: 100%; /* 見出し画像は横いっぱいに */
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    font-size: 0.95rem; /* 小さすぎない程度に調整 */
+    margin: 1.2em 0; /* 段落間の余白をしっかり取る */
+  }
+
+  /* DM会話例の横幅調整（スマホで狭くなりすぎないように） */
+  .dm-example {
+    padding: 1rem;
+    margin: 1rem -4%; /* 少しだけ外にはみ出させて内容量を確保 */
+    border-radius: 8px;
+  }
+}
+
+/* 4. PC・タブレット表示（840px以上）の最適化 */
+@media (min-width: 840px) {
+  .prose {
+    padding: 0 40px; /* 広い画面では左右に少し内側余白を入れて、中央に視線を集める */
+  }
+}
+
+/* カレンダー（.card）の下に十分な余白を作る */
+.section .card {
+  margin-bottom: 3rem; /* 1rem（16px）の3倍、約48pxの余白を確保 */
+}
+
+/* ライブを選ぶときのポイント（h3）の上の余白を微調整 */
+.prose h3 {
+  margin-top: 2rem; /* カレンダーとの間にさらにゆとりを持たせる */
+}
+
+/* スマホ表示では余白を少しだけ抑える */
+@media (max-width: 600px) {
+  .section .card {
+    margin-bottom: 2rem; /* スマホでは画面が小さいため、やや少なめの余白に */
+  }
+}
+
+/* 外部リンクは必ず下線を表示 */
+a[target="_blank"] {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ===== リンクの視認性向上 ===== */
+
+/* 1. テキストリンク：色を変え、ホバー時に線を出す */
+.prose a:not(.pill-link):not(.slide):not(.interview-item) {
+  color: var(--red-1);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.prose a:hover {
+  opacity: 0.7;
+}
+
+/* 2. 枝豆ボタン（もっと見る）：少し浮き上がる動きを追加 */
+.pill-link {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block; /* 動きをつけるために必要 */
+  width: 100%;
+}
+
+.pill-link:hover {
+  transform: scale(1.05); /* マウスを乗せると少し大きく */
+}
+
+.pill-link:active {
+  transform: scale(0.95); /* クリックした瞬間に少し凹む */
+}
+
+/* 3. 画像リンク共通：マウスを乗せると明るくする */
+.slide img,
+.interview-item img {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.slide:hover img,
+.interview-item:hover img {
+  filter: brightness(1.1); /* 少し明るくして「反応」を示す */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* 影を強くして浮き上がらせる */
+}
+
+.center {
+  text-align: center;
+}
+
+.center p,
+.center .lead-sub {
+  text-align: center;
 }
