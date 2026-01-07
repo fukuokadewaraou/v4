@@ -593,3 +593,20 @@ footer{
     display: block;
     cursor: pointer;
   }
+
+  /* ===== beer.png専用のサイズ調整 ===== */
+.beer-image {
+  width: 60%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* スマホサイズでさらに小さくする */
+@media (max-width: 600px) {
+  .beer-image {
+    width: 80%;
+    max-width: 180px;
+  }
+}

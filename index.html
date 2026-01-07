@@ -5,37 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>福岡で笑おう！</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* スライダー上の COMING SOON バッジ用スタイル */
-    .thumb-wrap {
-      position: relative;
-      display: block;
-    }
-    .coming-soon-badge {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(226, 67, 31, 0.9); /* テーマカラーの赤 */
-      color: #fff;
-      font-weight: bold;
-      font-size: 0.9rem;
-      padding: 6px 12px;
-      border-radius: 4px;
-      white-space: nowrap;
-      letter-spacing: 0.05em;
-      pointer-events: none; /* バッジが邪魔で画像が見えなくならないように */
-      z-index: 10;
-    }
-    
-    /* クリック不可のスライド用 */
-    .slide.disabled {
-      cursor: default;
-    }
-    .slide.disabled img {
-      opacity: 0.8; /* 少し薄くする */
-    }
-  </style>
+ 
 </head>
 <body>
 
@@ -100,7 +70,7 @@
           <p>笑いの一杯に、乾杯。</p>
 
           <div class="guide-image">
-            <img src="images/beer.png" alt="ビールイラスト" />
+            <img src="images/beer.png" alt="ビールイラスト" class="beer-image" />
           </div>
           
           <a href="howto.html" class="pill-link"><img src="images/more.png" alt="もっと見る" /></a>
@@ -127,58 +97,36 @@
           <a class="slide" href="interview/michieda.html" aria-label="ミチエダ">
             <img src="images/michieda.jpg" alt="ミチエダ" loading="lazy">
           </a>
-          
-          <div class="slide disabled" aria-label="地雷原突破">
-            <div class="thumb-wrap">
-              <img src="images/jiraigen.jpg" alt="地雷原突破" loading="lazy">
-              <span class="coming-soon-badge">COMING SOON</span>
-            </div>
-          </div>
-          
+          <a class="slide" href="interview/jiraigentoppa.html" aria-label="地雷原突破">
+            <img src="images/jiraigen.jpg" alt="地雷原突破" loading="lazy">
+          </a>
           <a class="slide" href="interview/keisou.html" aria-label="ケイソウ">
             <img src="images/keisou.jpg" alt="ケイソウ" loading="lazy">
           </a>
-          
-          <div class="slide disabled" aria-label="ライム11合">
-            <div class="thumb-wrap">
-              <img src="images/rhyme.jpg" alt="ライム11合" loading="lazy">
-              <span class="coming-soon-badge">COMING SOON</span>
-            </div>
-          </div>
-          
+          <a class="slide" href="interview/rhyme11go.html" aria-label="ライム11合">
+            <img src="images/rhyme.jpg" alt="ライム11合" loading="lazy">
+          </a>
           <a class="slide" href="interview/tashimasho.html" aria-label="田島将">
             <img src="images/tashima.jpg" alt="田島将" loading="lazy">
           </a>
-
           <a class="slide" href="interview/patchworkpanda.html" aria-label="パッチワークパンダ">
             <img src="images/pachiwa1.jpg" alt="パッチワークパンダ" loading="lazy">
           </a>
           <a class="slide" href="interview/michieda.html" aria-label="ミチエダ">
             <img src="images/michieda.jpg" alt="ミチエダ" loading="lazy">
           </a>
-          
-          <div class="slide disabled" aria-label="地雷原突破">
-            <div class="thumb-wrap">
-              <img src="images/jiraigen.jpg" alt="地雷原突破" loading="lazy">
-              <span class="coming-soon-badge">COMING SOON</span>
-            </div>
-          </div>
-          
+          <a class="slide" href="interview/jiraigentoppa.html" aria-label="地雷原突破">
+            <img src="images/jiraigen.jpg" alt="地雷原突破" loading="lazy">
+          </a>
           <a class="slide" href="interview/keisou.html" aria-label="ケイソウ">
             <img src="images/keisou.jpg" alt="ケイソウ" loading="lazy">
           </a>
-          
-          <div class="slide disabled" aria-label="ライム11合">
-            <div class="thumb-wrap">
-              <img src="images/rhyme.jpg" alt="ライム11合" loading="lazy">
-              <span class="coming-soon-badge">COMING SOON</span>
-            </div>
-          </div>
-          
+          <a class="slide" href="interview/rhyme11go.html" aria-label="ライム11合">
+            <img src="images/rhyme.jpg" alt="ライム11合" loading="lazy">
+          </a>
           <a class="slide" href="interview/tashimasho.html" aria-label="田島将">
             <img src="images/tashima.jpg" alt="田島将" loading="lazy">
           </a>
-
         </div>
       </div>
 
