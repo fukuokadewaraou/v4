@@ -438,80 +438,60 @@ footer{
 }
 
 /* =========================================
-   YouTube公開予定エリア
+   YouTube公開予定エリア（統合・修正版）
    ========================================= */
 
    .movie-preview {
     margin: 48px 0;
-    padding: 24px;
+    padding: 0px 24px 24px; /* 上だけ狭くして「文字の上が空きすぎ」を解消 */
     background-color: #fff;
-    border: 2px dashed #ddd; /* 破線で「準備中」感を出す */
+    border: 2px dashed #ddd;
     border-radius: 12px;
     text-align: center;
   }
   
+  /* 見出し（「お悩み解決編」） */
   .movie-preview h3 {
-    margin-top: 0;
-    margin-bottom: 16px;
+    margin: 0 0 16px; /* 上は0、下にだけ余白 */
     color: #e73b3b;
     font-size: 1.2rem;
   }
   
-  /* =========================================
-   YouTube公開予定エリア（iframe版）
-   ========================================= */
-
-.movie-preview {
-  margin: 48px 0;
-  padding: 24px;
-  background-color: #fff;
-  border: 2px dashed #ddd;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.movie-preview h3 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  color: #e73b3b;
-  font-size: 1.2rem;
-}
-
-/* 動画プレーヤーのラッパー（16:9を維持） */
-.movie-box {
-  position: relative;
-  width: 100%;
-  max-width: 640px; /* PCでの最大幅 */
-  aspect-ratio: 16 / 9;
-  margin: 0 auto;
-  background-color: #000; /* 読み込み中の背景色 */
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* 実際に埋め込むiframeの設定 */
-.movie-box iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* チャンネルリンクボタン */
-.movie-link-btn {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 0.9em;
-  color: #e73b3b;
-  border-bottom: 1px solid #e73b3b;
-  padding-bottom: 2px;
-  transition: opacity 0.3s;
-}
-.movie-link-btn:hover {
-  opacity: 0.7;
-}
+  /* 動画プレーヤーのラッパー（16:9を維持） */
+  .movie-box {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  /* iframeをピッタリはめる */
+  .movie-box iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* チャンネルリンクボタン */
+  .movie-link-btn {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.9em;
+    color: #e73b3b;
+    border-bottom: 1px solid #e73b3b;
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+  }
+  .movie-link-btn:hover {
+    opacity: 0.7;
+  }
+  
 
 /* =========================================
    スクロールで出現する固定メニュー
@@ -708,28 +688,28 @@ a[target="_blank"] {
 }
 
 /* 既存の .movie-box は残したまま、下を追加（保険） */
-.movie-box {
-  min-height: 315px; /* 高さが0になるのを防ぐ */
-}
+/* .movie-box {
+  min-height: 315px; 
+} */
 
 /* さらに確実にしたい場合（古いブラウザ向け） */
-.movie-box::before{
+/* .movie-box::before{
   content:"";
   display:block;
-  padding-top:56.25%; /* 16:9 */
-}
+  padding-top:56.25%; 
+} */
 
 /* YouTube動画の外枠 */
-.movie-box {
+/* .movie-box {
   position: relative;
   width: 100%;
-  max-width: 720px;   /* 大きすぎ防止（お好みで） */
-  margin: 16px auto 0; /* 上余白を小さく */
+  max-width: 720px;   
+  margin: 16px auto 0; 
   aspect-ratio: 16 / 9;
   background: #000;
   border-radius: 16px;
   overflow: hidden;
-}
+} */
 
 /* iframeをピッタリはめる */
 .movie-box iframe {
@@ -741,13 +721,13 @@ a[target="_blank"] {
 }
 
 /* 動画セクション全体の余白を調整 */
-.movie-preview {
-  margin-top: 24px;     /* ← 大きすぎたら 16px でもOK */
+/* .movie-preview {
+  margin-top: 24px; 
   padding-top: 0;
-}
+} */
 
 /* 見出しの余白を減らす */
-.movie-preview h3 {
+/* .movie-preview h3 {
   margin-top: 0;
   margin-bottom: 12px;
-}
+} */
