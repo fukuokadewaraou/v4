@@ -499,40 +499,6 @@ footer{
   border: 0;
 }
 
-/* 上に重ねるメッセージ（半透明） */
-.movie-msg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* 背景を暗くしてエラー画面をうっすら見せる */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-  pointer-events: none; /* 下のプレーヤーをクリックさせたい場合は auto、触らせないなら none */
-  z-index: 2; /* iframeより上に表示 */
-}
-
-/* COMING SOON バッジの微調整 */
-.movie-msg .coming-soon-badge {
-  position: static; /* movie-msg内でフレックス配置するため */
-  transform: none;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  background-color: #e73b3b;
-}
-
-.movie-msg p {
-  margin: 0;
-  font-weight: bold;
-  font-size: 1em;
-  line-height: 1.6;
-}
-
 /* チャンネルリンクボタン */
 .movie-link-btn {
   display: inline-block;
