@@ -735,3 +735,8 @@ a[target="_blank"] {
 .center .lead-sub {
   text-align: center;
 }
+
+/* インタビュー個別ページ：キャプションは両端揃えにしないで中央に固定 */
+.prose p.caption{
+  text-align: center;
+}
