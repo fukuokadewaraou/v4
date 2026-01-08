@@ -8,28 +8,6 @@
   <style>
     /* このページ固有のスタイル（会話形式など） */
     .howto-lead { margin-bottom: 2em; }
-    
-    /* ライブの種類リスト */
-    .live-types {
-      display: grid;
-      gap: 1em;
-      margin: 1.5em 0;
-    }
-    .live-type-item {
-      background: #fff;
-      padding: 1em;
-      border-radius: 8px;
-      border: 1px solid #eee;
-    }
-    .live-type-item dt {
-      font-weight: bold;
-      color: #e73b3b;
-      margin-bottom: 0.5em;
-    }
-    .live-type-item dd {
-      margin: 0;
-      font-size: 0.95em;
-    }
 
     /* DM会話例のデザイン */
     .dm-example {
@@ -91,7 +69,7 @@
       margin-bottom: 0.5em;
       display: block;
     }
-    
+
     /* マップ・動画埋め込みスタイル */
     .embed-responsive {
       position: relative;
@@ -121,7 +99,7 @@
         <source srcset="images/menu_long.png" media="(min-width: 840px)">
         <img src="images/menu.png" alt="メニュー">
       </picture>
-      
+
       <nav class="menu-links">
         <a href="index.html" aria-label="ホーム"></a>
         <a href="howto.html" aria-label="楽しみ方"></a>
@@ -130,144 +108,124 @@
       </nav>
     </div>
   </div>
-  
+
   <img class="title-img" src="images/howto.png" alt="どうやって楽しむと？ 楽しみ方" />
 
+  <!-- 一、誰が出るっちゃろ？ スケジュールばチェック！ -->
   <section class="section">
     <div class="container prose">
       <img src="images/howto1.png" alt="一、誰が出るっちゃろ？スケジュールばチェック！" class="title-img howto-title">
 
-      <p class="howto-lead">まずは、気になっている芸人さんや、スケジュールの合う日を探してみましょう。<br>屋台のメニューを選ぶみたいに、「今日はどれにしようかな？」くらいの気軽さで大丈夫です。</p>
+      <p class="howto-lead">
+        福岡では、平日・週末を問わず、さまざまなお笑いライブが開催されています。<br>
+        まずはスケジュールを見て、<strong>「行けそうな日・時間」</strong>から探すのがおすすめです。
+      </p>
 
       <div class="card" aria-label="カレンダー埋め込み領域">
         <iframe title="Calendar" src="https://timetreeapp.com/public_calendars/fukuokadewaraou/embed/monthly?calendar_name=true&frame_color=%23e73b3b" style="width:100%;min-height:700px;aspect-ratio:680/720;border:none"></iframe>
       </div>
 
+      <p class="caption" style="text-align:center; margin-top: 10px; color: var(--red-2);">
+        ※掲載は手動更新のため、最新情報は主催者発信もあわせてご確認ください。
+      </p>
+
       <h3>ライブを選ぶときのポイント</h3>
       <ul class="bullets">
-        <li><strong>出演者</strong>：推しを観たい？それとも知らない芸人を開拓したい？</li>
-        <li><strong>チケットの価格</strong>：500円〜3000円ぐらいのライブが多いです。</li>
-        <li><strong>会場の場所</strong>：「予定が早く終わったし、この辺でお笑い見て帰ろうかな」も大歓迎。</li>
-        <li><strong>ライブのテーマ</strong>：その日の気分に合わせて、味付けを選びましょう。</li>
+        <li><strong>開催場所</strong>：天神・博多・薬院など、行きやすいエリアから選ぶ</li>
+        <li><strong>開演時間</strong>：授業・仕事終わりに間に合うかをチェック</li>
+        <li><strong>料金</strong>：まずは予算に合うものから（目安は次のセクションで紹介）</li>
       </ul>
 
-      <dl class="live-types">
-        <div class="live-type-item">
-          <dt>寄席（よせ）</dt>
-          <dd>複数の芸人が次々にネタを披露する、一番オーソドックスなスタイル。色んな味を少しずつ楽しめます。</dd>
-        </div>
-        <div class="live-type-item">
-          <dt>企画・コーナーライブ</dt>
-          <dd>ネタだけでなく、大喜利やゲームコーナーなどがメインのライブ。芸人さんの素顔や関係性が見えてきます。</dd>
-        </div>
-        <div class="live-type-item">
-          <dt>単独ライブ</dt>
-          <dd>一組の芸人が、ネタや企画をたっぷり披露します。その芸人の世界観にどっぷり浸かりたい人に。</dd>
-        </div>
-      </dl>
+      <p>
+        最初は「近い」「安い」「時間が合う」くらいの基準で十分です。<br>
+        予定にハマるライブを見つけて、ふらっと行ってみてください。
+      </p>
 
     </div>
   </section>
 
+  <!-- 二、チケットば取らないかん！ -->
   <section class="section">
     <div class="container prose">
       <img src="images/howto2.png" alt="二、チケットば取らなんたい！" class="title-img howto-title">
 
-      <p>行きたいライブが決まったら、次はチケットの準備です。<br>
-      もし初めてで一人で行くのが不安なら、家族や友だちを誘ってみるのもおすすめです。「一緒に笑いに行かん？」って。</p>
+      <p class="howto-lead">
+        お笑いライブのチケットは、<strong>500円〜3000円ほど</strong>で購入できることが多く、比較的リーズナブルに楽しめます。<br>
+        ライブによって「事前購入」「予約」「当日券」などルールが違うので、しっかり確認しておきましょう。
+      </p>
 
-      <h3>チケットの買い方は大きく2つ</h3>
+      <h3>よくあるチケットのパターン</h3>
+      <ul class="bullets">
+        <li><strong>事前購入・受け取り</strong>：サイトで購入して、コンビニ発券／郵送／当日受け取りなど</li>
+        <li><strong>予約（取り置き）</strong>：フォーム入力やDMで予約 → 当日会場で支払い</li>
+        <li><strong>当日券</strong>：予約なしで当日受付で購入して入場</li>
+      </ul>
+
+      <h3>会場・主催ごとの例</h3>
       <ul class="bullets">
         <li>
-          <strong>福岡よしもと（劇場公演）</strong><br>
-          WEBサイト「FANYチケット」から購入・発券します。<br>
-          <a href="https://yoshimoto.funity.jp/" target="_blank" class="text-link">FANYチケット公式サイトへ &rarr;</a>
+          <strong>【よしもと福岡大和証券劇場】</strong><br>
+          公式サイトから購入して発券（コンビニ／郵送／当日受け取りなど）、または当日受付で購入できる公演もあります。<br>
+          公演によっては芸人さんから「手売りチケット」を購入できる場合があります。<br>
+          <a href="https://yoshimoto.funity.jp/" target="_blank" class="text-link">FANYチケット公式サイトへ</a>
         </li>
         <li>
-          <strong>その他のライブ（アマチュアなど）</strong><br>
-          イベントの公式SNS、主催者や芸人さんのSNSで告知されます。専用フォームからの予約や、DMでの予約が一般的です。
+          <strong>【アマチュアのライブ】</strong><br>
+          「福岡社会人お笑いサークル＋Fun」が主催するライブはSNSの告知から予約フォームで予約、またはDMで「公演名・購入枚数・名前」を伝えて予約できます。<br>
+          ライブハウス秘密で行われる「ビヨンドコメディ」は予約なしで当日支払いで入場できます。<br>
+          その他のライブは主催者や出演者のSNSでの案内に従って、フォームでの予約やチケットサイトでの予約が必要な場合があります。<br>
+          ライブ終わりに芸人さんからチケットを購入できることもあります。
+
+        </li>
+        <li>
+          <strong>【その他のお笑いライブ】</strong><br>
+          チケット販売サイト（チケットぴあ／イープラス／TIGET／LivePocket など）から購入、または当日受付で支払いして入場できます。
         </li>
       </ul>
 
-      <h3>お笑いライブ独特の文化「置きチケ・手売り」</h3>
-      <p>劇場の窓口ではなく、芸人さんから直接買うような独特のシステムがあります。手数料がかからず、前売り価格で入れることが多いので、ぜひ活用してみてください。</p>
+      <h3>事前に知っておきたい注意点</h3>
+      <ul class="bullets">
+        <li>人気のライブは<strong>前日までに売り切れる</strong>可能性があります</li>
+        <li><strong>前売り／当日</strong>で料金が変わるライブもあります</li>
+        <li>事前予約して当日支払い・受け取り → <strong>前売り価格</strong>になることが多いです</li>
+        <li>ライブごとに違うため、必ず<strong>告知・公式情報</strong>を確認しましょう</li>
+      </ul>
 
-      <h4>🎫 置きチケ（取り置き）</h4>
-      <p>事前に「行きます！」と伝えておき、当日受付で名前を言って支払う方法です。<br>SNSのDM（ダイレクトメッセージ）で行うのが一般的です。</p>
-
+      <h4>（必要な人だけ）DM予約の例</h4>
       <div class="dm-example">
         <div class="dm-title">〜 DMでのやりとり例 〜</div>
         <div class="chat-bubble me">
           <strong>あなた</strong>
-          11月12日の13時開演の〇〇ライブのチケットを1枚、置きチケでお願いしたいです！
+          〇月〇日の〇〇ライブのチケットを1枚、予約（取り置き）お願いします！
         </div>
         <div class="chat-bubble you">
-          <strong>芸人さん</strong>
-          ありがとうございます！承りました。受付でお名前をおっしゃってください！
-        </div>
-        <div class="chat-bubble center" style="text-align:center; border:none; background:none; font-size:0.8em; margin: 1em 0;">
-          〜 ライブ当日、受付にて 〜
-        </div>
-        <div class="chat-bubble me">
-          <strong>あなた</strong>
-          （コンビ名）の〇〇さんに置きチケをお願いしてました、（自分の名前）です。
+          <strong>主催／芸人さん</strong>
+          ありがとうございます！承りました。当日受付でお名前をおっしゃってください！
         </div>
       </div>
 
-      <h4>🤝 手売り（てうり）</h4>
-      <p>芸人さんから直接チケットを手渡しで購入する方法です。少し勇気がいりますが、直接お話しできるチャンスでもあります。</p>
-
-      <div class="dm-example">
-        <div class="dm-title">〜 DMでのやりとり例 〜</div>
-        <div class="chat-bubble me">
-          <strong>あなた</strong>
-          11月12日の〇〇ライブのチケット、手売りで1枚お願いできますか？
-        </div>
-        <div class="chat-bubble you">
-          <strong>芸人さん</strong>
-          ありがとうございます！当日何時ごろいらっしゃいますか？
-        </div>
-        <div class="chat-bubble me">
-          <strong>あなた</strong>
-          開場の15分前くらいに行く予定です！着いたらまた連絡します。
-        </div>
-        <div class="chat-bubble center" style="text-align:center; border:none; background:none; font-size:0.8em; margin: 1em 0;">
-          〜 当日、劇場前にて 〜
-        </div>
-        <div class="chat-bubble me">
-          <strong>あなた</strong>
-          着きました！いつでも受け取れます。
-        </div>
-        <div class="chat-bubble you">
-          <strong>芸人さん</strong>
-          今から向かいますね！
-        </div>
-      </div>
-      <p class="small-note">※手売りを行っていない公演もあります。不安な場合は主催者や芸人さんにSNS等で確認しましょう。</p>
-
-      <h3>主な劇場・ライブ主催団体</h3>
-      <ul class="bullets">
-        <li><strong>福岡よしもと</strong>：吉本興業の所属芸人が出演。テレビで見るベテランから若手まで、層の厚さはピカイチ。</li>
-        <li><strong>ワタナベエンターテインメント九州</strong>：福岡で活躍するタレント・芸人の単独ライブや、地域に根ざした企画が魅力。</li>
-        <li><strong>福岡社会人お笑いサークル＋Fun</strong>：社会人芸人によるライブを毎月開催。チケット予約は「パラレル」や公式SNSへのDMにて。</li>
-        <li><strong>ビヨンドコメディ</strong>：社会人や学生が入り混じる、企画力の高いライブ。ネタ以外の面白さも味わえます。</li>
-        <li><strong>小倉爆笑劇場</strong>：北九州のお笑い文化を盛り上げる、ワンコインで楽しめるディープなライブ。</li>
-        <li><strong>WARABEE</strong>：九州大学のお笑いサークル。出演者は全員大学生！フレッシュな笑いが楽しめます。</li>
-      </ul>
     </div>
   </section>
 
+  <!-- 三、迷わんごと行きんしゃい！ -->
   <section class="section">
     <div class="container prose">
       <img src="images/howto3.png" alt="三、迷わんごと行きんしゃい！" class="title-img howto-title">
 
-      <p>初めて行く場所は迷いやすいもの。開演時間に遅れないよう、事前に地図や経路を確認しておくと安心です。</p>
+      <p class="howto-lead">
+        初めて行く会場は、事前に場所を確認しておくと安心です。<br>
+        <strong>開場時間〜開演10分前まで</strong>に到着できると、余裕を持って入場できます。
+      </p>
 
       <h3>よしもと福岡劇場（BOSS E・ZO FUKUOKA）</h3>
       <div class="embed-responsive">
         <iframe src="https://maps.google.com/maps?q=BOSS+E・ZO+FUKUOKA&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
       </div>
-      <p><a href="https://youtu.be/rjsLblYDGEE?si=iBGGJXRgcWtM4Px_" target="_blank" class="text-link">公式アクセス動画を見る（YouTube） &rarr;</a></p>
+      <p>
+        <a href="https://youtu.be/rjsLblYDGEE?si=iBGGJXRgcWtM4Px_" target="_blank" class="text-link">
+          公式アクセス動画を見る（YouTube）
+        </a>
+      </p>
 
       <h3>Live House 秘密</h3>
       <div class="embed-responsive">
@@ -282,72 +240,86 @@
     </div>
   </section>
 
+  <!-- 四、はじまるばい！ -->
   <section class="section">
     <div class="container prose">
       <img src="images/howto4.png" alt="四、はじまるばい！" class="title-img howto-title">
 
-      <p>基本的には、ライブの最初に説明される案内に従えば大丈夫。<br>
-      ここでは、みんなが気持ちよく笑うためのちょっとしたマナーをご紹介します。</p>
+      <p class="howto-lead">
+        基本は、会場で案内されるルールに従えば大丈夫です。<br>
+        ここでは、みんなが気持ちよく笑うための<strong>最低限のマナー</strong>だけまとめます。
+      </p>
 
       <div class="manner-grid">
         <div class="manner-item">
           <span class="manner-icon">🤫</span>
-          <strong>私語は控えめに</strong>
-          <p class="small-text">ネタ中やトーク中は、隣の人とのおしゃべりは休憩。ツッコミも心の中で。</p>
+          <strong>私語は禁止</strong>
+          <p class="small-text">おしゃべりはせずに、ライブを楽しみましょう。</p>
         </div>
         <div class="manner-item">
           <span class="manner-icon">📵</span>
           <strong>スマホはマナーモード</strong>
-          <p class="small-text">音や光は意外と目立ちます。通知が来ない設定にしておきましょう。</p>
+          <p class="small-text">音や光は意外と目立ちます。通知はOFFに。</p>
         </div>
         <div class="manner-item">
           <span class="manner-icon">📷</span>
           <strong>撮影は案内に従って</strong>
-          <p class="small-text">基本的に撮影・録音はNG。でも「写真OKタイム」があるライブも！</p>
+          <p class="small-text">基本はNG。OKの時間がある場合は会場から案内があります。</p>
         </div>
       </div>
 
       <p style="margin-top:2em;">
-        もっと詳しく知りたい方は、人気芸人「ヤーレンズ」によるマナー解説動画も参考になりますよ。<br>
-        <a href="https://youtu.be/_1kuRfbf3M0?si=7gYUfIe1vB42JLtC" target="_blank" class="text-link">【ヤーレンズ】寄席のルール・マナー解説（YouTube） &rarr;</a>
+        「どこまでOK？」が不安なときは、会場の案内を優先してください。
       </p>
+
     </div>
   </section>
 
+  <!-- 五、いやー、笑ったばい -->
   <section class="section">
     <div class="container prose">
       <img src="images/howto5.png" alt="五、いやー、笑ったばい" class="title-img howto-title">
+      <p>
+        ライブによっては、終演後に芸人さんが出口でお客さんを見送る「お見送り」があることもあります。
+      </p>
 
-      <p>ライブによっては、終演後に芸人さんが出口でお客さんを見送る「お見送り」があることも。</p>
-
-      <p>「話してみたいけど、何て声をかけたらいいか分からない…」<br>
-      そんな時は、短くひとこと伝えるだけで、芸人さんはとても嬉しいものです。</p>
+      <p>
+        ひとこと伝えるなら、短くこれだけでも大丈夫です。
+      </p>
 
       <ul class="bullets">
         <li>「今日のネタ、面白かったです！」</li>
-        <li>「YouTube 見てます！」</li>
         <li>「また観に来ます！」</li>
+        <li>「ありがとうございました！」</li>
       </ul>
-      
-      <p>笑顔で「ありがとうございました」だけでも十分。次の人のために、会話は短めにするのがスマートです。</p>
+
+      <p>
+        次の人のために、会話は短めがスマートです。
+      </p>
+
     </div>
   </section>
 
+  <!-- 六、余韻にひたるばい！ -->
   <section class="section">
     <div class="container prose">
       <img src="images/howto6.png" alt="六、余韻にひたるばい！" class="title-img howto-title">
 
-      <p>家に帰ってからも、お笑いの楽しみは続きます。自分なりの「余韻の楽しみ方」を見つけてみてください。</p>
+      <p class="howto-lead">
+        ライブが終わったあとも、楽しみは続きます。<br>
+        気になった芸人さんの情報を追ったり、次の予定を探してみましょう。
+      </p>
 
       <ul class="bullets">
-        <li><strong>感想を呟く</strong>：ハッシュタグをつけてライブの感想を投稿しよう！あなたの投稿が福岡のお笑いを盛り上げます。</li>
-        <li><strong>プレイリストを作る</strong>：出囃子（登場曲）やライブで流れていた曲を聴いて、気分を上げる。</li>
-        <li><strong>次を探す</strong>：気になった芸人さんのSNSをフォローして、次のライブ情報をチェック。</li>
-        <li><strong>ラジオや動画を楽しむ</strong>：YouTubeや配信番組で、ネタとは違うトークの魅力を発見する。</li>
+        <li><strong>次を探す</strong>：SNSをフォローして次のライブ情報をチェック</li>
+        <li><strong>感想を残す</strong>：短いメモでもOK。次に行くときの参考になります</li>
+        <li><strong>このサイトを使う</strong>：インタビューやブログから、次の入口を見つける</li>
       </ul>
 
-      <p>「また行きたい！」と思ったときが、次の笑いへの入口です。<br>
-      いつでも、福岡の笑いはここで待っとります。</p>
+      <p>
+        「また行きたい」と思ったときが、次の笑いへの入口です。
+      </p>
+
     </div>
   </section>
 
