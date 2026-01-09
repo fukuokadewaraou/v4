@@ -731,3 +731,15 @@ a[target="_blank"] {
   margin-top: 0;
   margin-bottom: 12px;
 } */
+
+@media (max-width: 600px) {
+  .interview-q {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: auto;
+    display: block;
+    box-sizing: border-box; /* ← パディング込みで横幅を制御 */
+  }
+}
